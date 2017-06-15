@@ -1,0 +1,11 @@
+{
+  "global": {
+    "globalAutoLayerMarkEnable": false
+  },
+  "15ca55ef237": {
+    "guideLinesEnabled": true
+  },
+  "15ca55ef238": {
+    "guideLinesEnabled": false
+  }
+}

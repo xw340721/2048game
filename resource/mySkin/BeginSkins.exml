@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BeginSkins" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="15ca55ef238"/>
+	<e:Image source="start_background_png" left="0" top="0"/>
+	<e:Image source="start_logo_png" horizontalCenter="0" top="40"/>
+	<e:Group width="345.45" height="200" horizontalCenter="0" verticalCenter="100" anchorOffsetX="0">
+		<e:Button id="btn_start" label="" width="350" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="button_json.play_normal" source.down="button_json.play_down" scale9Grid="31,16,27,117"/>
+				<e:Label id="labelDisplay" text="PLAY" left="40" verticalCenter="0" verticalAlign="middle" textAlign="center" size="40"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label text="PLAY" size="60" horizontalCenter="-20" textColor="0x114a7c" verticalCenter="0"/>
+	</e:Group>
+	<e:Button id="btn_setting" label="" x="45" y="700">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="button_json.setting_normal" source.down="button_json.setting_down"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="btn_level" label="" x="162" y="700">
+		<e:skinName>
+			<e:Skin currentState="level_easy" states="up,down,disabled,level_normal,level_easy,level_special">
+			<e:Image width="400" height="100%" source="button_json.custom_normal" source.down="button_json.custom_down" scale9Grid="34,33,27,23" anchorOffsetX="0"/>
+			<e:Image source="icon_json.level_normal" includeIn="level_normal" left="30" verticalCenter="0"/>
+			<e:Label text="NORMAL" includeIn="level_normal" size="35" textColor="0x04260e" verticalCenter="0" horizontalCenter="30"/>
+			<e:Label text="EASY" includeIn="level_easy" verticalCenter="0" size="35" horizontalCenter="30" textColor="0x04260e"/>
+			<e:Label text="SPECIAL" includeIn="level_special" verticalCenter="0" size="35" horizontalCenter="30" textColor="0x04260e"/>
+			<e:Image source="icon_json.level_easy" includeIn="level_easy" verticalCenter="0" left="30"/>
+			<e:Label id="labelDisplay" horizontalCenter="30" verticalCenter="0" includeIn="level_special" textColor="0x04260e" size="35" text="SPECIAL"/>
+			<e:Image source="icon_json.level_special" includeIn="level_special" left="30" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>
