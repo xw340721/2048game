@@ -15,6 +15,7 @@ var game;
         }
         ControllerPrepCommand.prototype.execute = function () {
             (new game.SceneCommand()).register();
+            (new game.GameCommand()).register();
         };
         return ControllerPrepCommand;
     }(puremvc.SimpleCommand));

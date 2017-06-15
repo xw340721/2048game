@@ -137,7 +137,7 @@ var Main = (function (_super) {
     Main.prototype.startCreateScene = function () {
         game.ApplicationFacade.getInstance().startUp(this.appContainer);
         game.ApplicationFacade.getInstance().sendNotification(game.SceneCommand.CHANGE, 1);
-        // this.addChild(new game.StartScreen());
+        // this.addChild(new game.GameScreen());
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

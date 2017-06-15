@@ -15,6 +15,7 @@ var game;
         }
         SceneCommand.prototype.register = function () {
             this.facade.registerCommand(SceneCommand.CHANGE, SceneCommand);
+            this.facade.registerCommand(SceneCommand.SHOW_SETTING, SceneCommand);
         };
         SceneCommand.prototype.execute = function (notification) {
             var data = notification.getBody();
@@ -23,6 +24,13 @@ var game;
                 case SceneCommand.CHANGE: {
                     if (data == 1)
                         appMeidator.main.enterStartScreen();
+                    else
+                        appMeidator.main.enterGameScreen();
+                    break;
+                }
+                case SceneCommand.SHOW_SETTING: {
+                    appMeidator.main.showSettingWindow(data);
+                    break;
                 }
             }
         };
@@ -33,6 +41,10 @@ var game;
      * 场景切换
      */
     SceneCommand.CHANGE = "scene_change";
+    /**
+     * 显示设置界面
+     */
+    SceneCommand.SHOW_SETTING = "scene_setting";
     game.SceneCommand = SceneCommand;
     __reflect(SceneCommand.prototype, "game.SceneCommand", ["puremvc.ICommand", "puremvc.INotifier"]);
 })(game || (game = {}));

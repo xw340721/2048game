@@ -7,5 +7,26 @@
   },
   "15ca55ef238": {
     "guideLinesEnabled": false
+  },
+  "15caaef2226": {
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": -354
+      },
+      {
+        "type": "v",
+        "pos": 599
+      },
+      {
+        "type": "v",
+        "pos": 42
+      },
+      {
+        "type": "h",
+        "pos": 119
+      }
+    ],
+    "guideLinesEnabled": false
   }
 }

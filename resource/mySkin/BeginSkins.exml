@@ -12,7 +12,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Label text="PLAY" size="60" horizontalCenter="-20" textColor="0x114a7c" verticalCenter="0"/>
+		<e:Label text="PLAY" size="60" horizontalCenter="-20" textColor="0x114a7c" verticalCenter="0" touchEnabled="false"/>
 	</e:Group>
 	<e:Button id="btn_setting" label="" x="45" y="700">
 		<e:skinName>
@@ -22,17 +22,12 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Button id="btn_level" label="" x="162" y="700">
+	<e:Button id="btn_level" label="" currentState="down" x="162" y="699">
 		<e:skinName>
-			<e:Skin currentState="level_easy" states="up,down,disabled,level_normal,level_easy,level_special">
+			<e:Skin states="up,down,disabled">
 			<e:Image width="400" height="100%" source="button_json.custom_normal" source.down="button_json.custom_down" scale9Grid="34,33,27,23" anchorOffsetX="0"/>
-			<e:Image source="icon_json.level_normal" includeIn="level_normal" left="30" verticalCenter="0"/>
-			<e:Label text="NORMAL" includeIn="level_normal" size="35" textColor="0x04260e" verticalCenter="0" horizontalCenter="30"/>
-			<e:Label text="EASY" includeIn="level_easy" verticalCenter="0" size="35" horizontalCenter="30" textColor="0x04260e"/>
-			<e:Label text="SPECIAL" includeIn="level_special" verticalCenter="0" size="35" horizontalCenter="30" textColor="0x04260e"/>
-			<e:Image source="icon_json.level_easy" includeIn="level_easy" verticalCenter="0" left="30"/>
-			<e:Label id="labelDisplay" horizontalCenter="30" verticalCenter="0" includeIn="level_special" textColor="0x04260e" size="35" text="SPECIAL"/>
-			<e:Image source="icon_json.level_special" includeIn="level_special" left="30" verticalCenter="0"/>
+	<e:Label id="btn_level_label" text="EASY" size.up="35" textColor.up="0x0b5133" verticalCenter.up="0" horizontalCenter.up="30" verticalCenter="0" horizontalCenter="30" textColor="0x0b5133" size="35" verticalAlign="middle" textAlign="center"/>
+	<e:Image id="btn_level_icon" source="icon_json.level_easy" left.up="30" verticalCenter.up="0" left="30" verticalCenter="0"/>
 			</e:Skin>
 		</e:skinName>
 	</e:Button>

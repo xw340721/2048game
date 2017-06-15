@@ -5,7 +5,8 @@ module game {
 		}
 		
 		public execute():void{
-			(new SceneCommand()).register()
+			(new SceneCommand()).register();
+			(new GameCommand()).register();
 		}
 
 	}

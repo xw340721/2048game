@@ -12,10 +12,8 @@ var game;
         __extends(StartScreen, _super);
         function StartScreen() {
             var _this = _super.call(this) || this;
-            _this.index = 0;
             _this.skinName = "BeginSkins";
-            _this.btn_level.addEventListener(egret.TouchEvent.TOUCH_END, _this.onclick_level, _this);
-            _this.btn_level.addEventListener(egret.TouchEvent.TOUCH_BEGIN, _this.onclick_level_begin, _this);
+            _this.once(eui.UIEvent.CREATION_COMPLETE, _this.createdComplete, _this);
             return _this;
         }
         StartScreen.Shared = function () {
@@ -24,12 +22,8 @@ var game;
             }
             return StartScreen.shared;
         };
-        StartScreen.prototype.onclick_level_begin = function () {
-            this.btn_level.currentState = "down";
-        };
-        StartScreen.prototype.onclick_level = function () {
-            var level = ["level_easy", "level_normal", "level_special"];
-            this.btn_level.currentState = level[this.index++ % 3];
+        StartScreen.prototype.createdComplete = function () {
+            game.ApplicationFacade.getInstance().registerMediator(new game.StartScreenMediator(this));
         };
         return StartScreen;
     }(eui.Component));

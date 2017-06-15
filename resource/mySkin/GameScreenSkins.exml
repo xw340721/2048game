@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameScreenSkins" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="15caaef2226"/>
+	<e:Image source="sence_background_png" left="0" top="0"/>
+	<e:Rect width="558" height="558" x="42" y="120" anchorOffsetY="0" anchorOffsetX="0" fillAlpha="0.3" visible="false"/>
+</e:Skin>

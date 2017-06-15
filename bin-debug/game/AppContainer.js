@@ -11,6 +11,14 @@ var game;
             this.layer.removeChildren();
             this.layer.addChild(game.StartScreen.Shared());
         };
+        AppContainer.prototype.enterGameScreen = function () {
+            this.layer.removeChildren();
+            this.layer.addChild(game.GameScreen.Shared());
+        };
+        AppContainer.prototype.showSettingWindow = function (type) {
+            if (type === void 0) { type = "setting"; }
+            console.log("setting");
+        };
         return AppContainer;
     }());
     game.AppContainer = AppContainer;

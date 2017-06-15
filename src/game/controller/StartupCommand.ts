@@ -9,6 +9,7 @@ module game{
         public initializeMacroCommand(){
             this.addSubCommand(ControllerPrepCommand);
             this.addSubCommand(ViewPrepCommand);
+            this.addSubCommand(ModelPrepCommand)
         }
     }
 }

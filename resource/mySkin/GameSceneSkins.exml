@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameSceneSkins" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="sence_background_png" x="0" y="0"/>
+	<e:Group id="group_tiles"  width="560" height="560" x="40" y="120">
+	</e:Group>
+	<e:Rect id="mask_er" width="560" height="560" y="120" x="40"/>
+</e:Skin>

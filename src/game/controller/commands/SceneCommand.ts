@@ -11,8 +11,14 @@ module game {
 		 */
 		public static CHANGE:string="scene_change";
 
+		/**
+		 * 显示设置界面
+		 */
+		public static SHOW_SETTING:string="scene_setting";
+
 		public register():void{
 			this.facade.registerCommand(SceneCommand.CHANGE,SceneCommand)
+			this.facade.registerCommand(SceneCommand.SHOW_SETTING,SceneCommand)
 		}
 
 		public execute(notification:puremvc.Notification):void{
@@ -22,6 +28,13 @@ module game {
 				case SceneCommand.CHANGE:{
 					if(data==1)
 						appMeidator.main.enterStartScreen();
+					else
+						appMeidator.main.enterGameScreen();
+					break;
+				}
+				case SceneCommand.SHOW_SETTING:{
+					appMeidator.main.showSettingWindow(data);
+					break;
 				}
 			}
 		}

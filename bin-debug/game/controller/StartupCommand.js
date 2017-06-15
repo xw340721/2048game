@@ -17,6 +17,7 @@ var game;
         StartupCommand.prototype.initializeMacroCommand = function () {
             this.addSubCommand(game.ControllerPrepCommand);
             this.addSubCommand(game.ViewPrepCommand);
+            this.addSubCommand(game.ModelPrepCommand);
         };
         return StartupCommand;
     }(puremvc.MacroCommand));
