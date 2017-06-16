@@ -21,8 +21,16 @@ module game {
 			switch (notification.getName()) {
 				case GridProxy.TILE_INSERT:
 					this.gameScene.createTile(<TileVO>data);
+					break;
 				case GridProxy.TILE_RESET:
 					this.gameScene.clearTiles();
+					break;
+				case GridProxy.TILE_MOVE:
+					this.gameScene.moveTile(<TileVO>data);
+					break;
+				case GridProxy.TILE_MERGED:
+					this.gameScene.mergedTile(<TileVO>data)
+					break;
 			}
 		}
 

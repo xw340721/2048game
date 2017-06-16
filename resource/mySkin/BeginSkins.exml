@@ -22,7 +22,7 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Button id="btn_level" label="" currentState="down" x="162" y="699">
+	<e:Button id="btn_level" label="" currentState="down" y="699" horizontalCenter="30">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="400" height="100%" source="button_json.custom_normal" source.down="button_json.custom_down" scale9Grid="34,33,27,23" anchorOffsetX="0"/>

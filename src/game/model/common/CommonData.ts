@@ -18,7 +18,7 @@ module game {
 		/**
 		 * 游戏当前等级
 		 */
-		public static level:string = Level.NORMAL;
+		public static level:string = Level.EASY;
 
 		/**
 		 * 最高分

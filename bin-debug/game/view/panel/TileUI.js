@@ -49,13 +49,13 @@ var game;
                     egret.Tween.get(self).to({
                         scaleX: 1,
                         scaleY: 1
-                    });
+                    }, 100);
                 };
                 this.scaleX = this.scaleY = 1;
                 egret.Tween.get(self).to({
                     scaleX: 1.3,
                     scaleY: 1.3
-                }).call(fun);
+                }, 100).call(fun);
             }
         };
         /**
@@ -66,6 +66,8 @@ var game;
             egret.Tween.get(self).to({
                 x: xTo,
                 y: yTo
+            }, 100).call(function () {
+                self.dispatchEvent(new egret.Event("moveComplete"));
             });
         };
         return TileUI;

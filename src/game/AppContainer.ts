@@ -15,7 +15,6 @@ module game {
 			this.layer.addChild(GameScreen.Shared());
 		}
 
-
 		public showSettingWindow(type:string="setting"):void{
 			console.log("setting");
 		}

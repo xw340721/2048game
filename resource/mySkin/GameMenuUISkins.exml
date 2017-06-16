@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="GameMenuUISkins" width="640" height="117" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Image source="gamemenu_json.menubackground" x="0" top="0"/>
-	<e:Label id="label_score" text="0" textColor="0x000000" size="35" y="31" x="310"/>
+	<e:Label id="label_score" text="8888" textColor="0x000000" size="35" y="31" x="310"/>
 	<e:Button id="btn_setting" label="" x="523" y="13">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
@@ -12,9 +12,9 @@
 	</e:Button>
 	<e:Group id="group_pannel" width="375" height="26" horizontalCenter="0" bottom="5">
 		<e:Image source="gamemenu_json.highscroce" verticalCenter="0" left="15"/>
-		<e:Image name="img_level_icon" id="img_level_icon" source="gamemenu_json.level_small_easy" x="294" y="2"/>
+		<e:Image name="img_level_icon" id="img_level_icon" x="294" y="2" fillMode="clip" source=""/>
 		<e:Label text="HIGH SCORE : " x="44" size="14" textColor="0x0e354f" bold="true" y="6"/>
-		<e:Label name="label_high_score" id="label_high_score" text="88888" x="148" textColor="0x0e354f" size="14" bold="true" y="6"/>
+		<e:Label name="label_high_score" id="label_high_score" text="8888" x="148" textColor="0x0e354f" size="14" bold="true" y="6"/>
 		<e:Label name="label_level" id="label_level" text="EASY" textColor="0x0e354f" size="14" bold="true" x="323" y="6"/>
 	</e:Group>
 </e:Skin>

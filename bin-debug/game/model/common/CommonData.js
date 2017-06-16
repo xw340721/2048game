@@ -28,7 +28,7 @@ var game;
     /**
      * 游戏当前等级
      */
-    CommonData.level = game.Level.NORMAL;
+    CommonData.level = game.Level.EASY;
     /**
      * 最高分
      */

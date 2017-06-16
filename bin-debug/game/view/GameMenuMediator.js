@@ -15,6 +15,23 @@ var game;
             _this.gameMenuUI.btn_setting.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.onclick_setting, _this);
             return _this;
         }
+        GameMenuMediator.prototype.listNotificationInterests = function () {
+            return [
+                game.GameProxy.SCORE_RESERT,
+                game.GameProxy.SCORE_UPDATE
+            ];
+        };
+        GameMenuMediator.prototype.handleNotification = function (notification) {
+            var data = notification.getBody();
+            switch (notification.getName()) {
+                case game.GameProxy.SCORE_RESERT:
+                    this.gameMenuUI.reset();
+                    break;
+                case game.GameProxy.SCORE_UPDATE:
+                    this.gameMenuUI.update(data);
+                    break;
+            }
+        };
         GameMenuMediator.prototype.onclick_setting = function () {
             this.sendNotification(game.SceneCommand.SHOW_SETTING, "pause");
         };

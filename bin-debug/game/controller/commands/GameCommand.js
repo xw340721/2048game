@@ -15,15 +15,25 @@ var game;
         }
         GameCommand.prototype.register = function () {
             this.facade.registerCommand(GameCommand.START_GAME, GameCommand);
+            this.facade.registerCommand(GameCommand.MOVE_TILE, GameCommand);
+            this.facade.registerCommand(GameCommand.UPDATE_SCORE, GameCommand);
         };
         GameCommand.prototype.execute = function (notification) {
             var gameProxy = this.facade.retrieveProxy(game.GameProxy.NAME);
             var gridProxy = this.facade.retrieveProxy(game.GridProxy.NAME);
+            var data = notification.getBody();
             switch (notification.getName()) {
                 case GameCommand.START_GAME:
-                    gridProxy.reset();
-                    gridProxy.addStartTiles();
                     this.sendNotification(game.SceneCommand.CHANGE, 2);
+                    gridProxy.reset();
+                    gameProxy.reset();
+                    gridProxy.addStartTiles();
+                    break;
+                case GameCommand.MOVE_TILE:
+                    gridProxy.move(data);
+                    break;
+                case GameCommand.UPDATE_SCORE:
+                    gameProxy.updateScore(data);
                     break;
             }
         };
@@ -31,6 +41,12 @@ var game;
     }(puremvc.SimpleCommand));
     GameCommand.NAME = "GameCommand";
     GameCommand.START_GAME = "start_game";
+    /**
+     * 执行移动 , body  0: 上, 1: 右, 2:下, 3: 左
+     */
+    GameCommand.MOVE_TILE = "move_tile";
+    GameCommand.UPDATE_SCORE = "update_score";
+    GameCommand.FINISH_GAME = "finish_game";
     game.GameCommand = GameCommand;
     __reflect(GameCommand.prototype, "game.GameCommand", ["puremvc.ICommand", "puremvc.INotifier"]);
 })(game || (game = {}));

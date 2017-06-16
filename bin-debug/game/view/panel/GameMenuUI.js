@@ -23,7 +23,20 @@ var game;
             }
             return GameMenuUI.shared;
         };
+        GameMenuUI.prototype.reset = function () {
+            this.label_score.text = 0 + "";
+            this.label_high_score.text = 0 + "";
+            this.label_level.text = game.CommonData.level.toUpperCase();
+            this.img_level_icon.texture = RES.getRes("gamemenu_json.level_small_" + game.CommonData.level);
+        };
+        GameMenuUI.prototype.update = function (data) {
+            this.label_score.text = data.totalScore;
+            this.label_high_score.text = data.highScore;
+        };
         GameMenuUI.prototype.createCompleteEvent = function () {
+            this.label_high_score = this.group_pannel.getChildByName("label_high_score");
+            this.img_level_icon = this.group_pannel.getChildByName("img_level_icon");
+            this.label_level = this.group_pannel.getChildByName("label_level");
             game.ApplicationFacade.getInstance().registerMediator(new game.GameMenuMediator(this));
         };
         return GameMenuUI;

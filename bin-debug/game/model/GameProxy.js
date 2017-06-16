@@ -11,11 +11,48 @@ var game;
     var GameProxy = (function (_super) {
         __extends(GameProxy, _super);
         function GameProxy() {
-            return _super.call(this) || this;
+            var _this = _super.call(this, GameProxy.NAME) || this;
+            _this.won = false;
+            _this.over = false;
+            _this._score = 0;
+            return _this;
         }
+        Object.defineProperty(GameProxy.prototype, "score", {
+            get: function () {
+                return this._score;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        GameProxy.prototype.reset = function () {
+            this._score = 0;
+            this.won = false;
+            this.over = false;
+            game.CommonData.isRuning = true;
+            this.sendNotification(GameProxy.SCORE_RESERT);
+        };
+        /**
+         * 更新计分板
+         */
+        GameProxy.prototype.updateScore = function (addScore) {
+            if (addScore != 0) {
+                this._score += addScore;
+                if (this._score > game.CommonData.highScore)
+                    game.CommonData.highScore = this._score;
+                this.sendNotification(GameProxy.SCORE_UPDATE, { totalScore: this.score, highScore: game.CommonData.highScore, addScore: addScore });
+            }
+        };
         return GameProxy;
     }(puremvc.Proxy));
     GameProxy.NAME = "GameProxy";
+    /**
+     * 更新得分
+     */
+    GameProxy.SCORE_UPDATE = "score_update";
+    /**
+     * 游戏重置
+     */
+    GameProxy.SCORE_RESERT = "score_reset";
     game.GameProxy = GameProxy;
     __reflect(GameProxy.prototype, "game.GameProxy", ["puremvc.IProxy", "puremvc.INotifier"]);
 })(game || (game = {}));

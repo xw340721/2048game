@@ -11,7 +11,9 @@ var game;
             tileVO.x = this.x;
             tileVO.y = this.y;
             tileVO.value = this.value;
-            // if(this.pre)
+            if (this.previousPosition) {
+                tileVO.previousPosition = { x: this.previousPosition.x, y: this.previousPosition.y };
+            }
             tileVO.merged = this.merged;
             return tileVO;
         };

@@ -3,34 +3,40 @@ module game {
 		/**
 		 * 行
 		 */
-		public x:number;
+		public x: number;
 
 		/**
 		 * 列
 		 */
-		public y:number;
+		public y: number;
 
 		/**
 		 * 数值
 		 */
-		public value :number;
+		public value: number;
 
 		/**
 		 * 是否已合并
 		 */
-		public merged:boolean;
+		public merged: boolean;
 
-		public constructor(){
+		/**
+		 * 移动之前的位置
+		 */
+		public previousPosition: any;
+		public constructor() {
 
 		}
 
 
-		public clone():TileVO{
-			var tileVO:TileVO = new TileVO();
+		public clone(): TileVO {
+			var tileVO: TileVO = new TileVO();
 			tileVO.x = this.x;
 			tileVO.y = this.y;
 			tileVO.value = this.value;
-			// if(this.pre)
+			if (this.previousPosition) {
+				tileVO.previousPosition = { x: this.previousPosition.x, y: this.previousPosition.y };
+			}
 			tileVO.merged = this.merged;
 			return tileVO;
 		}

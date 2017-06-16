@@ -27,8 +27,16 @@ var game;
             switch (notification.getName()) {
                 case game.GridProxy.TILE_INSERT:
                     this.gameScene.createTile(data);
+                    break;
                 case game.GridProxy.TILE_RESET:
                     this.gameScene.clearTiles();
+                    break;
+                case game.GridProxy.TILE_MOVE:
+                    this.gameScene.moveTile(data);
+                    break;
+                case game.GridProxy.TILE_MERGED:
+                    this.gameScene.mergedTile(data);
+                    break;
             }
         };
         Object.defineProperty(GameSceneMediator.prototype, "gameScene", {

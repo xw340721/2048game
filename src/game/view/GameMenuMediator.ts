@@ -7,6 +7,28 @@ module game {
 		}
 
 
+		public listNotificationInterests(){
+			return [
+				GameProxy.SCORE_RESERT,
+				GameProxy.SCORE_UPDATE
+			]
+		}
+
+
+		public handleNotification (notification:puremvc.Notification){
+			var data :any = notification.getBody();
+			switch(notification.getName()){
+				case GameProxy.SCORE_RESERT:
+					this.gameMenuUI.reset()
+					break;
+				case GameProxy.SCORE_UPDATE:
+					this.gameMenuUI.update(data);
+					break;
+			}
+		}
+
+
+
 		public onclick_setting(){
 			this.sendNotification(SceneCommand.SHOW_SETTING,"pause");
 		}
